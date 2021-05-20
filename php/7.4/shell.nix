@@ -12,4 +12,7 @@ in mkShell {
     XDEBUG_CONFIG = lib.optional debug "idekey=PHPSTORM remote_enable=1";
     PHP_IDE_CONFIG = "serverName=localhost";
     LOCALE_ARCHIVE="${pkgs.glibcLocales}/lib/locale/locale-archive";
+    shellHook = ''
+        PATH="bin:vendor/bin:$PATH"
+    '';
 }
